@@ -163,10 +163,17 @@
             margin-bottom: 5px;
         }
 
-        @media only screen and (max-width: 600px) {
-            .container {
-                padding: 5px;
-            }
+       @media only screen and (max-width: 600px) {
+    .participant div, .participant a {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .participant .remark-input {
+        order: 3;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 
             .participant div, .participant a {
                 flex-basis: 50%;
@@ -262,7 +269,7 @@
 async function fetchSheetData() {
     const sheetId = '1JsMGoD5enBE0EtMfihOy_58HcG1dzcDfEtxn2M0Y65Q';
     const apiKey = 'AIzaSyDrClgUbT-0cFoYe4W81dyxikZVbjVlcT8';
-    const range = 'Sheet7';
+    const range = 'dragon';
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
 
     try {
